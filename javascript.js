@@ -1,5 +1,32 @@
 
 
+
+//Final function tu run the game
+function game() {
+    alert("You're about to face a well-know rock-paper-scisors player. It is going to take at least 5 rounds. Accurately as many as it requires for one of you to gain five point. Good luck.");
+    
+    let computerPoints = 0;
+    let playerPoints = 0;
+
+    while (computerPoints < 5 && playerPoints < 5) {
+        let roundResult = singleGame();
+        
+        computerPoints += roundResult[0];
+        playerPoints += roundResult[1];
+
+        console.log("Score: " + computerPoints + " - " + playerPoints);
+    }
+    if (computerPoints == 5) {
+        console.log("Computer has won");
+    } else {
+        console.log("You've defeated a machine!!! Congrats");
+    }
+
+}
+
+
+//function that allowes to play a single round of the game
+
 function singleGame(playerSelection,computerSelection){
     
      computerSelection = computerPlay();
