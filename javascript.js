@@ -2,13 +2,56 @@
 
 function singleGame(playerSelection,computerSelection){
     
+     computerSelection = computerPlay();
 // Getting intput and changing the input to CAPITAL LETTERS
     do {
         playerSelection = prompt("Choose between: rock, paper, scisors.");  
         playerSelection = playerSelection.toUpperCase();
     } while ( (playerSelection != "ROCK") && (playerSelection != 'PAPER'))
-       
-    
+
+//Variables to count the score of player and computer
+
+    let computerScore = 0;
+    let playerScore = 0;
+
+//Display of the chosen figure
+
+    console.log("Computer -> " + computerSelection + " | " + playerSelection + " <- You");
+
+//All the possible situations in the game + point additions
+
+    if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
+        console.log("It is a draw");
+    }  else if (playerSelection == 'ROCK' && computerSelection == 'PAPER') {
+        console.log("You lost. +1 for the computer");
+        computerScore +=1;
+    } else if (playerSelection == 'ROCK' && computerSelection == 'SCISORS') {
+        console.log("Congrats, You won!!! +1 for you");
+        playerScore +=1;
+    } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
+        console.log("Paper beats rock. You won!");
+        playerScore +=1;
+    } else if (playerSelection == 'PAPER' && computerSelection =='PAPER') {
+        console.log("Bot chose paper. It's a draw");
+    } else if (playerSelection == 'PAPER' && computerSelection == 'SCISORS') {
+        console.log("Scissors cut paper. You lost");
+        computerScore += 1;
+    } else if (playerSelection == 'SCISORS' && computerSelection == 'ROCK') {
+        console.log("Rock is harder. You lost");
+        computerScore += 1;
+    } else if (playerSelection == 'SCISORS' && computerSelection == 'PAPER') {
+        console.log("You've cut it. Congrats");
+        playerScore += 1;
+    } else if (playerSelection == 'SCISORS' && computerSelection == 'SCISORS') {
+        console.log("Tie!");
+    } else {
+        console.log("IDK what have you chosen");
+    }
+
+//Returing the point score of player after a single round
+    let score = [computerScore,playerScore];
+
+        return score;    
 }
 
 
