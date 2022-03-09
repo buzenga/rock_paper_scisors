@@ -18,14 +18,16 @@ function game() {
     }
     if (computerPoints == 5) {
         console.log("Computer has won");
+        alert("Computer has won");
     } else {
         console.log("You've defeated a machine!!! Congrats");
+        alert("You've defeated a machine!!! Congrats");
     }
 
 }
 
 
-//function that allowes to play a single round of the game
+//function that allows to play a single round of the game
 
 function singleGame(playerSelection,computerSelection){
     
@@ -34,7 +36,7 @@ function singleGame(playerSelection,computerSelection){
     do {
         playerSelection = prompt("Choose between: rock, paper, scisors.");  
         playerSelection = playerSelection.toUpperCase();
-    } while ( (playerSelection != "ROCK") && (playerSelection != 'PAPER'))
+    } while ( (playerSelection != "ROCK") && (playerSelection != 'PAPER') && (playerSelection != "SCISORS"))
 
 //Variables to count the score of player and computer
 
